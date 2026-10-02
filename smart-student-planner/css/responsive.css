@@ -1,0 +1,314 @@
+/* ============================================================
+   Smart Student Planner - Responsive Styles
+   ============================================================ */
+
+/* ============================================================
+   TABLET - max 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .dashboard-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    flex: 1;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   MOBILE - max 768px
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --topbar-height: 56px;
+  }
+
+  /* Sidebar hidden off-screen on mobile */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Show hamburger button */
+  .sidebar-toggle {
+    display: flex !important;
+  }
+
+  /* Main content takes full width */
+  .main-content {
+    margin-left: 0;
+  }
+
+  .topbar {
+    padding: 0 var(--spacing-md);
+  }
+
+  .topbar-date {
+    display: none;
+  }
+
+  .page-content {
+    padding: var(--spacing-md);
+  }
+
+  /* Stats grid single column */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Dashboard row single column */
+  .dashboard-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Welcome banner */
+  .welcome-banner {
+    padding: var(--spacing-lg);
+  }
+
+  .welcome-banner::before {
+    font-size: 50px;
+    opacity: 0.1;
+  }
+
+  .welcome-banner h2 {
+    font-size: 18px;
+  }
+
+  /* Quick actions wrap */
+  .quick-actions {
+    flex-wrap: wrap;
+  }
+
+  /* Task cards */
+  .task-card {
+    flex-wrap: wrap;
+  }
+
+  .task-actions {
+    margin-left: auto;
+  }
+
+  /* Timetable - show fewer days */
+  .timetable-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Calendar grid */
+  .calendar-day {
+    min-height: 42px;
+    padding: 4px 2px;
+  }
+
+  .day-number {
+    font-size: 11px;
+  }
+
+  .day-event-dot {
+    display: none;
+  }
+
+  /* Section header */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  /* Search bar */
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal {
+    max-width: 100%;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    max-height: 92vh;
+  }
+
+  /* Auth */
+  .auth-right {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .auth-card {
+    max-width: 100%;
+  }
+
+  /* Settings items */
+  .settings-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .settings-item .btn {
+    width: 100%;
+  }
+
+  /* Profile section */
+  .profile-avatar-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Form row */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filter tabs scrollable */
+  .filter-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  /* Toast */
+  .toast-container {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    left: var(--spacing-md);
+  }
+
+  .toast {
+    min-width: unset;
+  }
+
+  /* Assignment card */
+  .assignment-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Calendar nav */
+  .calendar-nav {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  /* Calendar two-column layout collapses to single column */
+  .calendar-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE - max 480px
+   ============================================================ */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .stat-info .stat-value {
+    font-size: 22px;
+  }
+
+  .page-title {
+    font-size: 16px;
+  }
+
+  .calendar-day-header {
+    font-size: 9px;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .btn-lg {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOP - min 1440px
+   ============================================================ */
+@media (min-width: 1440px) {
+  :root {
+    --sidebar-width: 280px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .page-content {
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    max-width: 1400px;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  .sidebar,
+  .topbar,
+  .toast-container,
+  .modal-overlay,
+  .btn,
+  .task-actions,
+  .action-btn {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .page-content {
+    padding: 0;
+  }
+}

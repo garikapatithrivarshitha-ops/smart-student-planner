@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register – Smart Student Planner</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="auth-page">
+
+  <!-- Left Panel -->
+  <div class="auth-left" role="complementary" aria-label="Application features">
+    <div class="auth-illustration">
+      <div class="illustration-icon">🎓</div>
+      <h2>Join Smart Student Planner</h2>
+      <p>Create your free account and start organizing your academic life today.</p>
+
+      <div class="auth-features">
+        <div class="auth-feature">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          <span>100% Free to use</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <span>Data stored locally on your device</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+          <span>Works on all devices</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <span>No internet required after setup</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel - Register Form -->
+  <div class="auth-right">
+    <div class="auth-card">
+
+      <!-- Logo -->
+      <div class="auth-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">Smart Student Planner</div>
+      </div>
+
+      <h1 class="auth-heading">Create an account</h1>
+      <p class="auth-subheading">Fill in the details below to get started.</p>
+
+      <!-- Register Form -->
+      <form id="register-form" novalidate aria-label="Registration form">
+
+        <div class="form-group">
+          <label class="form-label" for="register-name">Full Name</label>
+          <div class="input-group">
+            <i class="fa-solid fa-user input-icon" aria-hidden="true"></i>
+            <input
+              type="text"
+              id="register-name"
+              class="form-control"
+              placeholder="Your full name"
+              autocomplete="name"
+              aria-required="true"
+              aria-describedby="register-name-error"
+            />
+          </div>
+          <span class="form-error" id="register-name-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-email">Email Address</label>
+          <div class="input-group">
+            <i class="fa-solid fa-envelope input-icon" aria-hidden="true"></i>
+            <input
+              type="email"
+              id="register-email"
+              class="form-control"
+              placeholder="your@email.com"
+              autocomplete="email"
+              aria-required="true"
+              aria-describedby="register-email-error"
+            />
+          </div>
+          <span class="form-error" id="register-email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-password">Password</label>
+          <div class="input-group">
+            <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+            <input
+              type="password"
+              id="register-password"
+              class="form-control"
+              placeholder="At least 6 characters"
+              autocomplete="new-password"
+              aria-required="true"
+              aria-describedby="register-password-error"
+            />
+            <button type="button" class="input-action" id="toggle-password" aria-label="Show password">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <span class="form-error" id="register-password-error" role="alert" aria-live="polite"></span>
+          <!-- Password strength -->
+          <div style="margin-top: 6px;">
+            <div class="progress-wrap" style="height: 4px;">
+              <div class="progress-bar" id="strength-bar" style="width:0%"></div>
+            </div>
+            <span id="strength-label" style="font-size:11px; color: var(--text-muted);"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="register-confirm">Confirm Password</label>
+          <div class="input-group">
+            <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+            <input
+              type="password"
+              id="register-confirm"
+              class="form-control"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              aria-required="true"
+              aria-describedby="register-confirm-error"
+            />
+            <button type="button" class="input-action" id="toggle-confirm-password" aria-label="Show password">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <span class="form-error" id="register-confirm-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-full">
+          <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+          Create Account
+        </button>
+
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Sign in</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', initRegisterPage);
+</script>
+</body>
+</html>

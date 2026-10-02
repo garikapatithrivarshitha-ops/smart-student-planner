@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Smart Student Planner</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div class="auth-page">
+
+  <!-- Left Panel - Illustration -->
+  <div class="auth-left" role="complementary" aria-label="Application features">
+    <div class="auth-illustration">
+      <div class="illustration-icon">📖</div>
+      <h2>Smart Student Planner</h2>
+      <p>Your all-in-one academic companion. Organize tasks, track assignments, and stay on top of your studies.</p>
+
+      <div class="auth-features" aria-label="Key features">
+        <div class="auth-feature">
+          <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+          <span>Manage tasks and assignments</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+          <span>Track exam schedules</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <span>Weekly study timetable</span>
+        </div>
+        <div class="auth-feature">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <span>Monitor your progress</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel - Login Form -->
+  <div class="auth-right">
+    <div class="auth-card">
+
+      <!-- Logo -->
+      <div class="auth-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">Smart Student Planner</div>
+      </div>
+
+      <h1 class="auth-heading">Welcome back!</h1>
+      <p class="auth-subheading">Sign in to continue to your planner.</p>
+
+      <!-- Demo Account Info -->
+      <div class="auth-demo-box" role="note">
+        <strong>🎓 Demo Account</strong>
+        Email: <code>demo@student.com</code> &nbsp;|&nbsp; Password: <code>demo1234</code>
+        <br/>
+        <button class="btn btn-secondary btn-sm mt-sm" id="demo-login-btn" type="button">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i> Use Demo Account
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" novalidate aria-label="Login form">
+
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email Address</label>
+          <div class="input-group">
+            <i class="fa-solid fa-envelope input-icon" aria-hidden="true"></i>
+            <input
+              type="email"
+              id="login-email"
+              class="form-control"
+              placeholder="your@email.com"
+              autocomplete="email"
+              aria-required="true"
+              aria-describedby="login-email-error"
+            />
+          </div>
+          <span class="form-error" id="login-email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <div class="input-group">
+            <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+            <input
+              type="password"
+              id="login-password"
+              class="form-control"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              aria-required="true"
+              aria-describedby="login-password-error"
+            />
+            <button type="button" class="input-action" id="toggle-password" aria-label="Show password">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <span class="form-error" id="login-password-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group flex items-center justify-between gap-sm">
+          <div class="checkbox-group">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me">Remember me</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-full">
+          <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+          Sign In
+        </button>
+
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html">Create one</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', initLoginPage);
+</script>
+</body>
+</html>
